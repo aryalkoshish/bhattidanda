@@ -37,7 +37,7 @@ Home
                     <td class="mailbox-subject"><b>{{$d->subject}}</b> 
                     </td>
                     <td class="mailbox-attachment">
-                       <button class="button"><i class="fa fa-eye" data-toggle="modal" data-target="#deleteModal"></i></button>
+                       <a href="{{route('show.reply',$d->id)}}"><button class="button"><i class="fa fa-eye" ></i></button>
                       
                     </td>
                     <td class="mailbox-date"></td>

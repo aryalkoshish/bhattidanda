@@ -7,6 +7,7 @@ use Illuminate\support\facades\mail;
 use App\Mail\quickreply;
 use Carbon\Carbon;
 use DB;
+use Auth;
 
 class DashController extends Controller
 {
@@ -19,7 +20,7 @@ class DashController extends Controller
 
 		DB::table('quickreplies')->insert($merge);
 		Mail::to($data['email'])->send(new quickreply($data));
-		return redirect()->to('/');
+		return redirect()->to('/homeview');
     }
 
      public function val(){
@@ -72,11 +73,16 @@ class DashController extends Controller
     		$rejected = $rej;
     		$booking = $a-$accept-$rejected;    	
     }				
-		return view('cd-admin.home.home',compact('qreply','package','booking','reply','accept','rejected') );
+		return view('cd-admin.home.homeview',compact('qreply','package','booking','reply','accept','rejected') );
 	}
 
 	public function quickreplies(){
 		$view = DB::table('quickreplies')->get();
 		return view('cd-admin.home.dashboard.quickmailview',compact('view'));
 	}
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->back();
+    }
 }

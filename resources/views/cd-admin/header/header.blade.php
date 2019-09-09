@@ -19,13 +19,14 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="asset{{url('public\cd-admin\images\avatar1.png')}}" class="user-image" alt="User">
+                        <img src="{{asset('public/cd-admin/creatu/dist/img/avatar.png')}}" class="user-image" alt="User">
                         <span class="hidden-xs">Bhatti Danda</span>
+
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{url('public\cd-admin\images\avatar1.png')}}" class="img-circle" alt="User">
+                            <img src="{{asset('public/cd-admin/creatu/dist/img/avatar.png')}}"class="img-circle" alt="User">
 
                             <p>
                             
@@ -39,7 +40,7 @@
                                 <a href="#" class="btn btn-info btn-flat">Profile</a>
                             </div> --}}
                             <div class="pull-right">
-                                <a href="{{url('adminlogout')}}" class="btn btn-danger btn-flat">Sign out</a>
+                                <a href="{{route('logout')}}" class="btn btn-danger btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>
@@ -80,7 +81,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="{{url('/')}}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="{{route('home')}}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li class="header">services</li>
             <li class="treeview">
                 <a href="#">
@@ -226,7 +227,7 @@
             </li>
              <li class="header">SEO</li>
             <li class="treeview">
-                <a href="#">
+                <a href="{{route('view.seo')}}">
                     <i class="fa  fa-search"></i> <span>SEO</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>

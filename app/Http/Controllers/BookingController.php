@@ -67,6 +67,16 @@ class BookingController extends Controller
     	return view('cd-admin.home.booking.bookingreplied',compact('data')); 
     }
 
+    public function showbooked($id){
+        $vi = DB::table('bookingstatuses')->where('id',$id)->get()->first();
+        return view('cd-admin.home.booking.showbooked',compact('vi'));
+    }
+
+    public function showbookingreply($id){
+        $vi = DB::table('bookingreplies')->where('id',$id)->get()->first();
+        return view('cd-admin.home.booking.showbooked',compact('vi'));
+    }
+
     public function acceptreply(){
     	$request= Request()->all();
 

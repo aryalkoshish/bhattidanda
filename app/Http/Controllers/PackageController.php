@@ -87,22 +87,23 @@ class PackageController extends Controller
     public function editstore($id)
     {      
       $req= $this->editval();
-      $de = DB::table('packages')->where('id',$id)->get()->first();  
 
-          
-      $de['altimage'] = $req->altimage;
-      $de['description'] = $req->description;
-      $de['status'] = $req->status;  
-      $de->name = $req->name;      
-    if (isset($req->image))
+      $de =Package::where('id',$id)->get()->first();  
+
+      $de->altimage = $req['altimage'];
+      $de->description = $req['description'];
+      $de->status = $req['status'];  
+      $de->name = $req['name'];      
+    if (isset($req['image']))
     {
       $file=$req->image;     
       $filename = time().$file->getClientOriginalName();
       $dest=public_path('upload/package');
       $file->move($dest,$filename);
-      $de['image'] = $filename;
+      $de->image = $filename;
     }
     $de->save();
+    //DB::table('packages')->insert($de);
     return redirect()->to('viewpackages');
 
     }

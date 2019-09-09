@@ -11,27 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('cd-admin.home.home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' =>'auth'],function(){
+
+
+Route::get('/homeview', function () {
+    return view('cd-admin.home.homeview');
 });
-
-
-//about 
-
-// Route::post('/edit-about','AboutController@insert_about')->name('edit');
-
-
-
-
-//SEO
-
-Route::get('service-seo',function(){
-	return view('cd-admin.home.service-seo');
-});
-
-Route::get('/home/seo',function(){
-	return view('cd-admin.home.package-seo');
-});
+Route::get('/logout','DashController@logout')->name('logout');
 
 //Carousel
 // Route::get('add-carousel',function(){
@@ -106,13 +96,26 @@ Route::get('replies','BookingController@bookingreplied')->name('booking.replies'
 Route::post('/acceptreply','BookingController@acceptreply')->name('booking.accept');
 Route::POST('/reject','BookingController@rejectreply')->name('reject.reply');
 Route::get('/booked','BookingController@viewstatus')->name('booked.view');
+Route::get('/showbooked/{id}','BookingController@showbooked')->name('show.booked');
+Route::get('showreply/{id}','BookingController@showbookingreply')->name('show.reply');
 
 
 //Dashboard
-Route::get('/','DashController@homeview')->name('home');
+ Route::get('/homeview','DashController@homeview')->name('home');
 Route::post('/quickreply','DashController@quickreply')->name('quick.reply');
 Route::get('/quickreplies','DashController@quickreplies')->name('view.quickreply');
 
 // Route::get('/', function () {
 //     return view('cd-admin.home.home');
 // });
+
+//SEO
+route::get('/seopage','SeoController@createpackageseo')->name('package.seo');
+Route::post('/storeseo','SeoController@insertseo')->name('insert.seo');
+route::get('/seoview','SeoController@viewpackage')->name('view.seo');
+Route::post('/editseo/{id}','SeoController@editseo')->name('edit.seo');
+Route::get('/showseo/{id}','SeoController@viewseo')->name('seo.show');
+Route::get('editview/{id}','SeoController@seoviewedit')->name('edit.view.seo');
+
+
+});
