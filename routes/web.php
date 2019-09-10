@@ -14,8 +14,20 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['middleware' =>'auth'],function(){
+//frontend routes
+Route::get('/home','FrontendController@fhome')->name('frontend.home');//home
+Route::get('/','FrontendController@fhom')->name('frontend.hom');//home
+Route::get('know-about-phool-maya','FrontendController@about')->name('frontend.about');//about
+Route::get('booking/{slug}','FrontendController@booking')->name('frontend.booking');//Booking
+Route::get('contact','FrontendController@contact')->name('frontend.contact');//Contact
+Route::get('gallery','FrontendController@gallery')->name('frontend.gallery');//gallery
+Route::get('room','FrontendController@room')->name('frontend.room');//room
+route::get('package','FrontendController@package')->name('frontend.package');//package
+Route::get('ourservice','FrontendController@service')->name('frontend.service');//service
+Route::get('album/{id}', 'FrontendController@album')->name('frontend.album');//albums
+Route::get('whyus','FrontendController@whyus')->name('frontend.whyus');//why us
+route::get('guestreviews','FrontendController@guestreviews')->name('frontend.guestreviews');//Guest Review
 
 
 Route::get('/homeview', function () {
@@ -24,9 +36,6 @@ Route::get('/homeview', function () {
 Route::get('/logout','DashController@logout')->name('logout');
 
 //Carousel
-// Route::get('add-carousel',function(){
-// 	return view('cd-admin.home.add-carousel');
-// });
 Route::get('/carousels/create','CarouselController@create')->name('carousels.create');
 Route::post('/carousel','CarouselController@store')->name('carousels.store');
 Route::get('/carousels','CarouselController@view')->name('carousels.index');

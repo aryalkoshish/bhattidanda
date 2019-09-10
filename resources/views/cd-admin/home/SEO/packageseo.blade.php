@@ -27,8 +27,12 @@ Home
           <div class="form-group" >
         <div class="text text-danger">{{$errors->first('page')}}</div>
        <label for="page">page</label><div>
-       <input type="radio" name="page" value="package">package
-       <input type="radio" name="page" value="booking">booking
+       <input type="radio" name="page" value="package">package</br>
+       <input type="radio" name="page" value="booking">booking</br>
+       <input type="radio" name="page" value="gallery">Gallery</br>
+       <input type="radio" name="page" value="review">Guest Review</br>
+       <input type="radio" name="page" value="contact">Contact</br>
+       <input type="radio" name="page" value="about" >About Us
      </div>
    </div>
           <div class="form-group">

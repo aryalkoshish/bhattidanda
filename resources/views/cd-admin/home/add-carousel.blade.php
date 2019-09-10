@@ -37,7 +37,7 @@ Home
           <div class="form-group">
             <div class="text text-danger">{{$errors->first('description')}}</div>
             <label for="description">Description</label>             
-            <textarea id="summernote" rows="10" cols="80" name="description">
+            <textarea class="summernote" rows="10" cols="80" name="description">
               {{old('description')}}
             </textarea>
           </div>

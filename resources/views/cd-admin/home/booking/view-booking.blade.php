@@ -30,20 +30,30 @@
           
         </div>
         <div class="box-body">
-         <h4>Email :: {{$vi->email}}</h4>
          
-           Gender :: {{$vi->gender}}</br>
-
-           Age :: {{$vi->age}}</br>
-           Location :: {{$vi->location}}</br>
-           Contact :: {{$vi->contact}}</br>
-         </p>
-         <p>{{$vi->message}}</p>
+        <pre>
+          Email :: {{$vi->email}}
+          Gender :: {{$vi->gender}}
+          Age :: {{$vi->age}}
+          Location :: {{$vi->location}}
+          Contact :: {{$vi->contact}}
+          Message :: {{$vi->message}}
+        </pre>
 
         </div>
         <!-- /.box-body -->
         <div class="box-footer col-md-12 ">
           <div class="col-md-1" >
+            <?php $test =  App\bookingstatus::where('bookingid',$vi->id)->get()->count();
+            
+            ?>
+            @if($test ==1)
+              @if($test['status']=='Accepted')
+            <button class="button"> Accepted</button>
+              @elseif($test['status'=='Rejected'])
+            <button class="button">Rejected</button>
+            @endif
+            @else
           <form action="{{route('booking.accept')}}" method="post" >
             @csrf
           <input type="hidden" name="id" value="{{$vi->id}}" >
@@ -59,9 +69,10 @@
           <input type="hidden" name="action" value="Replied">
           <input type="hidden" name="email" value="{{$vi->email}}">
           <input type="hidden" name="status" value="Rejected" >
-          <button class="button" type="submit" ></a>Rejectted</i></button>
+          <button class="button" type="submit" ></a>Rejected</i></button>
         </form>
         </div>
+        @endif
           <a href="{{URL()->previous()}}"> <button class="button pull-right "></a>Back</i></button>
         </div>
         <!-- /.box-footer-->

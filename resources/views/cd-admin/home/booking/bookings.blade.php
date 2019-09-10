@@ -28,22 +28,56 @@ Home
               <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                   <tbody>
-                    @foreach($sa as $s)
                     
+
+                      
                   <tr>
-                    <td><input type="checkbox"></td>
-                    <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                      @foreach($sa as $s)
+
+                    <td>
+                   <?php $test =  App\bookingstatus::where('bookingid',$s->id)->get()->first();
+                    
+                   ?>
+                
+                    </td>
+                    <td>
+                      <?php $t = App\bookingreplies::where('bookingid',$s->id)->get()->first();
+                      ?>
+
+                      @if($t['action']=='Replied')
+                      
+                      {{$t['action']}}
+                    
+                      @elseif($test['reply']=='Replied')
+
+                      {{$test['status']}}
+
+                      @else
+
+                      Not Replied                     
+                
+                      @endif
+                    </td>
                     <td class="mailbox-name"><a href="read-mail.html">{{$s->name}}</a></td>
                     <td class="mailbox-subject"><b>{{$s->email}}</b> {{$s->contact}}
                     </td>
+                     
                     <td class="mailbox-attachment">
-                       <button class="button"><i class="fa fa-close" data-toggle="modal" data-target="#deleteModal"></i></button>
+                      
                       <button class="button"><a href="{{route('show.booking',$s->id)}}"> <i class="fa fa-eye "></i></button>
                       <button class="button"><a href="{{route('booking.compose',$s->id)}}"><i class="fa fa-reply"></i></button>
                     </td>
-                    <td class="mailbox-date">15 hours ago</td>
+                    <td class="mailbox-date">
+                      <?php $date = Carbon\Carbon::parse($s->created_at);
+                     $now = Carbon\Carbon::now('Asia/Kathmandu');
+                      $diff = $date->diffForHumans($now);
+                      ?>
+                      {{$diff}}
+                    </td>
                   </tr>
                   </tbody>
+                   
+                    
                   @endforeach
                 </table>
                 <!-- /.table -->

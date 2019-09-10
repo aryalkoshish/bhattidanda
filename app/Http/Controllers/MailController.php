@@ -46,7 +46,10 @@ class MailController extends Controller
 			'address' => 'required|email',
 			'message' => 'nullable',
 		]);
-		DB::table('emailforms')->insert($dat);
+		$a = [];
+		$a['created_at'] =Carbon::now('Asia/Kathmandu');
+		$merge = array_merge($dat,$a);
+		DB::table('emailforms')->insert($merge);
 		return redirect()->to('/mailbox');
 	}
 

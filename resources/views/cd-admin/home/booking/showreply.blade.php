@@ -30,15 +30,17 @@
           
         </div>
         <div class="box-body">
-         <h4>Subject :: {{$vi->subject}}</h4>
-            Message :: {{$vi->message}}
          
-           Status :: {{$vi->action}}</br>
-
+         <pre>
+            Subject :: {{$vi->subject}}
+            Message :: {{$vi->message}}         
+            Status :: {{$vi->action}}
+          </pre>
+          <a href="{{URL()->previous()}}"> <button class="button pull-right "></a>Back</i></button>
 
         </div>
       
-          <a href="{{URL()->previous()}}"> <button class="button pull-right "></a>Back</i></button>
+          
         </div>
         <!-- /.box-footer-->
       </div>

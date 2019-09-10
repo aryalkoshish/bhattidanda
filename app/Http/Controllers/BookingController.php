@@ -23,14 +23,18 @@ class BookingController extends Controller
 
     public function bookingstore(){
     	$r = $this->valid();
+        $a = [];
+        $a['created_at'] =Carbon::now('Asia/Kathmandu');
+        $merge = array_merge($r,$a);
 
-    	DB::table('bookings')->insert($r);
-    	return redirect()->to('/bookings');
+    	DB::table('bookings')->insert($merge);
+    	return redirect()->to('/home');
     }
 
     public function bookingview(){
     	$sa = DB::table('bookings')->get();
-    	
+                
+    
     	return view('cd-admin.home.booking.bookings',compact('sa'));
     }
 
@@ -74,7 +78,7 @@ class BookingController extends Controller
 
     public function showbookingreply($id){
         $vi = DB::table('bookingreplies')->where('id',$id)->get()->first();
-        return view('cd-admin.home.booking.showbooked',compact('vi'));
+        return view('cd-admin.home.booking.showreply',compact('vi'));
     }
 
     public function acceptreply(){

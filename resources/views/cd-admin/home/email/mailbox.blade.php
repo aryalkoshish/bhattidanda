@@ -46,7 +46,9 @@ Home
 
                   </div>
                     </td>
-                    <td class="mailbox-date">15 hours ago</td>
+                    <td class="mailbox-date">
+                      
+                    </td>
                   </tr>   
                   @endforeach
 

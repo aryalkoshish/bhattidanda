@@ -30,10 +30,12 @@
           
         </div>
         <div class="box-body">
-         <h4>Email :: {{$vi->subject}}</h4>
-          Message :: {{$vi->message}}
-         
-           Status :: {{$vi->action}}</br>      
+         <h4>Email :: {{$vi->email}}</h4>
+          <pre>
+          Message :: {{$vi->reply}}
+
+           Status :: {{$vi->status}}
+         </pre></br>      
           <a href="{{URL()->previous()}}"> <button class="button pull-right "></a>Back</i></button>
         </div>
         <!-- /.box-footer-->
