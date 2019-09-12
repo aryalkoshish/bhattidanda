@@ -10,7 +10,7 @@
       <div class="Content col-md-12" >
        <section class="content-header">
 
-        <h1> View Package</h1>
+        <h1 style="text-align: center;"> View Package</h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
           <li class="active">View Package</li>
@@ -18,6 +18,10 @@
       </section>
       <!-- Main content -->
       <section class="content">
+        <div>
+      <a href="{{route('add.package')}}"><button class="btn btn-default bg-green " >Add Package  
+      </button></a>
+    </div>
         <div class="row">
           <div class="col-md-12">
             <!-- /.box -->

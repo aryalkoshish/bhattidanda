@@ -27,7 +27,7 @@ Home
       Album Name: {{$a->albumname}} 
       </div>
       <div> 
-        <img src="{{asset('public/upload/album/'.$a->albumimage)}}" style="height: 300px" >
+        <img src="{{asset('public/upload/album/'.$a->albumimage)}}" style="height: 300px; width: 250px" >
       </div>
         <div>
          <a href="{{route('image.del',$a->id)}}"> <button type="button" class="btn btn-danger ">Delete</button> </a>

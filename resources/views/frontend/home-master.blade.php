@@ -1,5 +1,9 @@
 <!doctype html>
 <html lang="en">
+<title>@yield('title','bhattidanda')</title>
+<title>@yield('title')</title>
+<meta name="keyword" content="@yield('keyword')" >
+<meta name="description" content="@yield('description')">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -18,7 +18,7 @@ Home
 
 </section>
 
-<section class="content">
+<section class="content" style="margin-top: 35px;" >
   <div class="row">
     <div class="col-md-3">
         <img src="{{asset('\public\cd-admin\images\avatar5.png')}}">

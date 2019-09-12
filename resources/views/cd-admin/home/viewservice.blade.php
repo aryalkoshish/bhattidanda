@@ -13,7 +13,7 @@
       <h1 style="text-align: center;"> View Service</h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li class="active">view Service</li>
+          <li class="active">View Service</li>
         </ol>
     </section>
         <section class="content">
@@ -21,6 +21,7 @@
       <a href="{{route('service.create')}}"><button class="btn btn-default bg-green " >Add Service  
       </button></a>
     </div>
+   
       <div class="row">
         
    

@@ -1,4 +1,7 @@
 @extends('frontend.home-master')
+@section('title',$seo->title)
+@section('keyword',$seo->keyword) 
+@section('description', $seo->description)
 
 @section('content')
 

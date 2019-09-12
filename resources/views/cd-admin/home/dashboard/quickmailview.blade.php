@@ -32,6 +32,7 @@
                       
                       <th>Subject</th>
                       <th>Message</th>
+                      <th>View
                     </tr>
                   </thead>
                   <tbody>
@@ -42,6 +43,9 @@
                       <td>{{$v->subject}}</td>
                       
                       <td>{!!str_limit($v->message,$limits='15')!!}</td>
+                      <td> 
+                        <a href="{{route('show.quickreply',$v->id)}}"> <button class="button pull-right ">View</i></button>
+                      </td>
                 </tr>
                 @endforeach
               </tbody>

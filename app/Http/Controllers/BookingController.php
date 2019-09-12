@@ -61,7 +61,7 @@ class BookingController extends Controller
 		$merge = array_merge($data,$a);
 
 		DB::table('bookingreplies')->insert($merge);
-		return redirect()->to('replies');
+		return redirect()->to('replies')->with('success','Message Replied');
 	}
 
 
@@ -93,7 +93,7 @@ class BookingController extends Controller
     	
     	Mail::to($as->email)->send(new status($as));
     	$as->save();
-    	return redirect()->to('/booked');
+    	return redirect()->to('/booked')->with('success','Booking Accepted');
     }
 
       public function rejectreply(){
@@ -108,7 +108,7 @@ class BookingController extends Controller
     	
     	Mail::to($as->email)->send(new reject($as));
     	$as->save();
-    	return redirect()->to('/booked');
+    	return redirect()->to('/booked')->with('error','Booking rejected');
 
     }
 

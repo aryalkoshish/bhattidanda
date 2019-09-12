@@ -26,7 +26,9 @@ Home
     
  <div class="box box-info" style="margin-top: 35px;">
           <div class="box-header with-border">
-            <h3 class="box-title">Album </h3>
+            <div class="box-title" >
+            <h3 style="text-align: center;"> Add Album </h3>
+          </div>
     <div class="box-body">
       <form method="POST" action="{{route('album.store')}}" enctype="multipart/form-data" >
         @csrf
@@ -42,6 +44,19 @@ Home
               <label for="altimage">Alternative Image Name</label>
               <input type="text" class="form-control" id="altimage" name="altimage" value="{{old('altimage')}}">
             </div>
+            <div class="form-group">
+              <label for="title">Seo Title</label>
+              <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}">
+            </div>
+            <div class="form-group">
+              <label for="keyword">Seo Keywords</label>
+              <input type="text" class="form-control" id="keyword" name="keyword" value="{{old('keyword')}}">
+            </div>
+            <div class="form-group" >
+              <label for="description">Description</label>
+              <input type="text" name="description" id="description" class="form-control" value="{{old('description')}}" >
+            </div>
+           
             <button type="submit" class="btn btn-default btn-flat bg-green ">Save Gallary</button>
           </form>
           </div>

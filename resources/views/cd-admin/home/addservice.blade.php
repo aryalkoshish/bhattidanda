@@ -20,7 +20,7 @@ Home
 <div class="col-md-10" style="margin-top: 35px;">
   <div class="box box-info ">
     <div class="box-header with-border">
-      <h1> Add Service</h1>
+      <h1 style="text-align: center;" > Add Service</h1>
       <form action="{{route('service.store')}}" method="post" enctype="multipart/form-data" >
         @csrf
         <div class="form-group">

@@ -78,6 +78,8 @@
 
    <!-- bootstrap wysihtml5 - text editor -->
    <link rel="stylesheet" href="{{url('public/cd-admin/creatu/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+   <!-- {{-- Toaster message --}} -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
    <!-- jQuery 2.2.3 -->
    <script src="{{url('public/cd-admin/creatu/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
@@ -405,10 +407,19 @@
 
 <!-- Pages JS -->
 <script src="{{url('public/cd-admin/creatu/js/home.js')}}"></script>
+
 <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 <script src="{{url('public/cd-admin/creatu/js/jquery.custom-file-input.js')}}"></script>
 
-
+<!-- {{-- for toaster --}} -->
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
+<script >
+        @if(Session::has('success'))
+       toastr.success('{{ Session::get('success') }}')
+       @elseif(Session::has('error'))
+       toastr.error('{{ Session::get('error') }}')
+       @endif
+       </script>
 <script >
  $('#delete').on('show.bs.modal', function (event) {
  var button = $(event.relatedTarget) // Button that triggered the modal

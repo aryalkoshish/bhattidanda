@@ -26,10 +26,16 @@ class AlbumController extends Controller
 			'albumname'=> 'required',
 			'albumimage' => 'required|mimes:JPG,jpg,jpeg,JPEG,PNG,png',
 			'altimage' => 'required',
+			'title' => 'required',
+			'keyword' => 'required',
+			'description' => 'required',
 		]);
 
 		$album['albumname'] = $request['albumname'];
 		$album['altimage']  = $request['altimage'];
+		$album['title'] = $request['title'];
+		$album['keyword'] = $request['keyword'];
+		$album['description'] = $request['description'];
 		if(isset($request['albumimage'])){
 			$file = $request['albumimage'];
 			$filename = time().$file->getClientOriginalName();
@@ -68,6 +74,7 @@ class AlbumController extends Controller
 
 		$image['altimage'] = $request['altimage'];
 		$image['albumid'] = $request['albumid'];
+		
 		if(isset($request['image'])){
 			$file = $request['image'];
 			$filename = time().$file->getClientOriginalName();

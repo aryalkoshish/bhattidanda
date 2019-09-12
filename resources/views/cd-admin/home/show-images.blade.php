@@ -17,18 +17,22 @@ Home
           <li class="active">images</li>
         </ol>
 </section>
-@foreach($image as $i) 
+
 <section class="content">
 
-  <div class="row" style="height: 100px; margin-top: 10px; margin: 10px; " >
+  <div class="row" style="height: 100px; margin-top: 35px;" >
+    @foreach($image as $i) 
     <div class="col-md-3">
       
     <div>
+      
+      <div class="col-md-4">
+        Image Name:{{$i->altimage}}
         <img src="{{asset('public/upload/image/'.$i->image)}}" height="300px">
+        <button type="button" class="btn btn-danger ">Delete</button> 
       </div>
-        <div>
-        <button type="button" class="btn btn-danger ">Delete</button>       
       </div>
+        
       </div>
         @endforeach 
   </div>

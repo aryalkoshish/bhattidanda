@@ -56,9 +56,9 @@ Home
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>{{$reply}}</h3>
+              <h3>{{$accepted}}</h3>
 
-              <p>Replied</p>
+              <p>Accepted</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -72,8 +72,8 @@ Home
           <div class="small-box bg-red">
             <div class="inner">
             	<div>
-              <h3>{{$accept}},{{$rejected}}</h3>
-              <p>Accepted , Rejected</p>
+              <h3>{{$rejected}}</h3>
+              <p> Rejected</p>
           </div>
           
           

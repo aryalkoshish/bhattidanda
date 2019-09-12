@@ -18,6 +18,9 @@ class CreateAlbumsTable extends Migration
             $table->string('albumimage');
             $table->string('albumname');
             $table->string('altimage');
+            $table->string('title');
+            $table->string('keyword');
+            $table->string('description');
             $table->timestamps();
         });
     }

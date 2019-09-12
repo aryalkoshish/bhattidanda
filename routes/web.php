@@ -73,6 +73,7 @@ Route::get('image/del/{id}','AlbumController@delimage')->name('image.del');
 Route::get('/addabout','AboutController@viewabout')->name('about');
 Route::get('/about/','AboutController@showabout')->name('about.show');
 Route::POST('/update/','AboutController@insertabout')->name('insertabout');
+Route::post('updated/{id}','AboutController@upda')->name('updateabout');
 
 //mailbox
 Route::get('/mailbox','MailController@showmailbox')->name('show.mailbox');
@@ -113,6 +114,7 @@ Route::get('showreply/{id}','BookingController@showbookingreply')->name('show.re
  Route::get('/homeview','DashController@homeview')->name('home');
 Route::post('/quickreply','DashController@quickreply')->name('quick.reply');
 Route::get('/quickreplies','DashController@quickreplies')->name('view.quickreply');
+Route::get('/quickreplyview/{id}','DashController@replyview')->name('show.quickreply');
 
 // Route::get('/', function () {
 //     return view('cd-admin.home.home');

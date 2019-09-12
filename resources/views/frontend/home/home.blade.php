@@ -21,15 +21,16 @@
 				<a href="{{url('whyus')}}"><button type="button" class="btn btn-primary capitalize btn-slider">Know More</button></a>
 			</div>
 		</div>
-
+		@foreach($carousel as $c)
 		<div class="item carousel-size">
-			<img class="img-responsive" src="asset('public/upload/carousel/'.$carousel->image)" >
+			<img class="img-responsive" src="asset('public/upload/carousel/'.$c->image)" >
 			<div class="text-center capitalize corpboot-wel">
 				<h2>Welcome to Bhattidanda Fresh & Natural,<br><br> Be more than a tourist, become a local </h2>
 				<a href="{{url('whyus')}}"><button type="button" class="btn btn-primary capitalize btn-slider">Know More</button></a>
 			</div>
-			<img src="3" alt="$carousel->altimage">
+			<img src="3" alt="{{$c->altimage}}">
 		</div>	
+		@endforeach
 
 		<!-- <div class="item carousel-size">
 			<div class="text-center capitalize corpboot-wel">

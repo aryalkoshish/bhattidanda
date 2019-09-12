@@ -25,7 +25,7 @@ Home
 
    <div class="box box-info" style="margin-top: 35px;">
     <div class="box-header with-border">
-      <h3 class="box-title">Add Image</h3>
+      <h3 class="box-title" style="text-align: center;">Add Gallary</h3>
       <form method="POST" action="{{route('images.store')}}" enctype="multipart/form-data" > 
         @csrf
       <div class="box-body">

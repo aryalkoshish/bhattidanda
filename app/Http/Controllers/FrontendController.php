@@ -12,22 +12,26 @@ use App\album;
 class FrontendController extends Controller
 {
     public function fhome(){
-    	$carousel=DB::table('carousels')->get()->first();
+    	$carousel=DB::table('carousels')->get()->take(2);
     	$glimpse=DB::table('albums')->get()->take(2);
-    	return view('frontend.home.home',compact('carousel','glimpse'));
+    	$seo=DB::table('seos')->where('page','home')->get()->first();
+    	return view('frontend.home.home',compact('carousel','glimpse','seo'));
     }
     public function fhom() {
-    	$carousel=DB::table('carousels')->orderBy('id','desc')->get();
-    	$glimpse=DB::table('albums')->first();
-    	return view('frontend.home.home',compact('carousel','glimpse'));
+    	$carousel=DB::table('carousels')->get()->take(2);
+    	$glimpse=DB::table('albums')->get()->take(2);
+    	$seo=DB::table('seos')->where('page','home')->get()->first();
+    	return view('frontend.home.home',compact('carousel','glimpse','seo'));
     }
     public function about() {
     	$about = DB::table('abouts')->get()->first();
-    	return view('frontend.about.know-about-phool-maya',compact('about'));
+    	$seo = DB::table('seos')->where('page','about')->get()->first();
+    	return view('frontend.about.know-about-phool-maya',compact('about','seo'));
 	}
 
 	public function booking($slug){
-		return view('frontend.booking.booking',compact('slug'));
+		$seo=DB::table('seos')->where('page','booking')->get()->first();
+		return view('frontend.booking.booking',compact('slug','seo'));
 	}
 
 	public function contact(){
@@ -36,7 +40,8 @@ class FrontendController extends Controller
 
 	public function gallery(){
 		$gallery=DB::table('albums')->get();
-		return view('frontend.gallery.gallery',compact('gallery'));
+		$seo=DB::table('seos')->where('page','gallery')->get()->first();
+		return view('frontend.gallery.gallery',compact('gallery','seo'));
 	}
 
 	public function room() {
@@ -44,13 +49,15 @@ class FrontendController extends Controller
 	}
 
 	public function package(){
-		$package =DB::table('packages')->get();
-		return view('frontend.package.package',compact('package'));
+		$package =DB::table('packages')->where('status','active')->get();
+		$seo=DB::table('seos')->where('page','package')->get()->first();
+		return view('frontend.package.package',compact('package','seo'));
 	}
 
 	public function service(){
-		$service = DB::table('services')->get();
-		return view('frontend.service.ourservice',compact('service'));
+		$service = DB::table('services')->where('status','active')->get();
+		$seo=DB::table('seos')->where('page','service')->get()->first();
+		return view('frontend.service.ourservice',compact('service','seo'));
 	}
 
 	public function album($id){
@@ -63,7 +70,8 @@ class FrontendController extends Controller
 	}
 
 	public function guestreviews(){
-		$review = DB::table('reviews')->orderBy('id','desc')->get()->take(2);
-		return view('frontend.guestreviews.guestreviews',compact('review'));
+		$review = DB::table('reviews')->where('status','active')->orderBy('id','desc')->get()->take(2);
+		$seo=DB::table('seos')->where('page','reivew')->get()->first();
+		return view('frontend.guestreviews.guestreviews',compact('review','seo'));
 	}
 }

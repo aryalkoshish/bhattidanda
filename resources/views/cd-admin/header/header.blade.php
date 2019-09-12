@@ -234,11 +234,9 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('/home/seo')}}"><i class="fa fa-circle-o"></i>Package</a></li>
+                    <li><a href="{{route('view.seo')}}"><i class="fa fa-circle-o"></i>Seo</a></li>
                 </ul>
-                 <ul class="treeview-menu">                    
-                    <li><a href="{{url('/service-seo')}}"><i class="fa fa-circle-o"></i>Service</a></li>
-                </ul>
+                 
             </li>
         </section>
         <!-- /.sidebar -->

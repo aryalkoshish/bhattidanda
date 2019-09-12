@@ -54,6 +54,7 @@ class SeoController extends Controller
 
     public function seoviewedit($id){
       $de =Seo::where('id',$id)->get()->first();
+      // $de = DB::table('seos')->paginate(4);
       return view('cd-admin.home.SEO.editseo',compact('de'));
     }
 

@@ -39,7 +39,7 @@ class PackageController extends Controller
    	$package['status'] = $req['status'];
    	
    	$package->save();
-   	return redirect()->to('viewpackages');
+   	return redirect()->to('viewpackages')->with('success','Package added');
 
    }
 
@@ -52,7 +52,7 @@ class PackageController extends Controller
    		unlink('upload/package'.$del->image);
    	}
    	DB::table('packages')->where('id',$id)->delete();
-   	return redirect()->to('viewpackages');
+   	return redirect()->to('viewpackages')->with('error','package deleted');
    }
 
 
@@ -71,7 +71,7 @@ class PackageController extends Controller
         }
         
         DB::table('packages')->where('id',$id)->update($a);
-        return redirect()->to('viewpackages');
+        return redirect()->to('viewpackages')->with('success','Status updated');
     }
 
     public function viewpage($id){
@@ -104,7 +104,7 @@ class PackageController extends Controller
     }
     $de->save();
     //DB::table('packages')->insert($de);
-    return redirect()->to('viewpackages');
+    return redirect()->to('viewpackages')->with('success','Edited Successfully');
 
     }
 

@@ -9,19 +9,25 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="Content col-md-12" >
        <section class="content-header">
-        <h1>View Reviw</h1>
+        
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
           <li class="active">View review</li>
         </ol>
       </section>
+
       <div class="col-md-1"></div>
-      <div class="col-md-10" style="margin-top: 25px;">
+
+      <div class="col-md-10" style="margin-top: 35px;">
         <div class="box box-info">
           <div class="box-header with-border">
+            <div class="col-md-1" >
             <a href="{{route('review.create')}}"><button class="btn btn-default bg-green " >Add Review  
                 </button></a>
-
+              </div>
+              <div class="col-md-9">
+            <h2 style="text-align: center;" >View Review</h2>
+          </div>
           </div>
           
           <div class="box-body">

@@ -36,7 +36,7 @@ Home
                 </div>
                 <div>
                   <label>Description::</label>
-                  {{$about->description}}
+                  {!!strip_tags($about->description,'<p>')!!}
                 </div>
                 <div>
                   <label>video ::</label>
@@ -77,7 +77,7 @@ Home
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit About Us</h4>
       </div>
-      <form method="POST" action="{{url('update',$about->id)}}" enctype="multipart/form-data" >
+      <form method="POST" action="{{route('updateabout',$about->id)}}" enctype="multipart/form-data" >
         @csrf
         <div class="modal-body">
           <div class="form-group">

@@ -1,5 +1,9 @@
 @extends('frontend.home-master')
 
+@section('title',$seo->title)
+@section('keyword'){!! $seo->keyword !!} 
+@section('meta-description'){!! $seo->description !!}
+
 @section('content')
 
 <div class="container-fluid abt-pad">

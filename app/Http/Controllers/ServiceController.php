@@ -5,6 +5,7 @@ use App\Traits\servicetrait;
 use App\service;
 use DB;
 use Illuminate\Http\Request;
+use session;
 
 class ServiceController extends Controller
 {
@@ -40,6 +41,7 @@ class ServiceController extends Controller
 		$service['status'] = $vald['status'];
         
 		$service->save();
+
 		return redirect()->to('/view/service');
 
     }
@@ -62,6 +64,7 @@ class ServiceController extends Controller
     	 	$edit['image'] = $flename; 
     	 }
     	$edit->save();
+        // Session::flash('success');
     	return redirect()->back();
     }
 

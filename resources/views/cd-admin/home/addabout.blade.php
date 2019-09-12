@@ -25,7 +25,7 @@ Home
           @csrf
           <div class="form-group">
             <div class="text text-danger">{{$errors->first('name')}}</div>
-            <label for="package name">Package Name</label>
+            <label for="package name"> Name</label>
             <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
           </div>
           

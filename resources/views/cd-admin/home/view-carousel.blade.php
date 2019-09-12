@@ -12,24 +12,22 @@ Home
 
    <section class="content-header">
     
-    <h2 style="text-align: center;">Carousels</h2>
+    <h3 style="text-align: center;">Carousels</h3>
     
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li class="active">View Carousel</li>
     </ol>
-  </section>
-  <section class="content">
-    
-    
-    
-    <div>
-      <a href="{{route('carousels.create')}}"><button class="btn btn-default bg-green " >Add Carousel  
+    <a href="{{route('carousels.create')}}"><button class="btn btn-default bg-green " >Add Carousel  
       </button></a>
-    </div>
+  </section>
+  <section class="content">    
+    <div>
+      
+    
 
 
-    <div class="row">
+      <div class="row">
 
       <!-- /.box -->
 
@@ -89,7 +87,7 @@ Home
               @endforeach
             </tbody>
           </table>
-
+          </div>
         </div>
         <!-- /.box-body -->
       </div>
